@@ -122,28 +122,25 @@ ul { list-style-type: none; }
 li { padding: 0.5rem 0; }
 
 figure { max-width: 55%;
-         -webkit-margin-start: 0;
-         -webkit-margin-end: 0;
-         margin-bottom: 3em; }
+         margin: 0;
+         position: relative; }
 
-figcaption { float: right;
-             clear: right;
-             margin-right: -48%;
-             margin-top: 0;
-             margin-bottom: 0;
+figcaption { width: 50%;
+             margin: 0;
              font-size: 1.0rem;
              line-height: 1.6;
-             vertical-align: baseline;
-             position: relative; }
+            position: absolute;
+            top: 0;
+            right: -60%; }
 
-figure.fullwidth figcaption { margin-right: 24%; }
+figure img { display: block;
+             margin: 1.4rem 1%; /* making images match tables in width */
+             width: 98%; }
 
 a { color: #111;
     text-decoration: none;
     border-bottom: 1px solid #777;
     padding-bottom: 1px; }
-
-img { max-width: 100%; }
 
 .sidenote, .marginnote { float:right;
                          clear: right;
@@ -189,7 +186,6 @@ img { max-width: 100%; }
 p, footer, pre.code, div.table-wrapper { width: 55%; }
 
 @media screen and (max-width: 760px) { p, footer, pre.code { width: 90%; }
-                                       figure { max-width: 90%; }
                                        blockquote p, blockquote footer { width: 90%; }}
 
 .sans { font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif; }
@@ -240,4 +236,14 @@ label.margin-toggle:not(.sidenote-number) { display: none; }
                                             vertical-align: baseline;
                                             position: relative; }
                            table, table.booktabs { width: 85%; }
-                           img { width: 100%; } }
+                           figure {
+                             max-width: 90%;
+                           }
+                           figcaption { background-color: red;
+                             position: relative;
+                             width: 98%;
+                             margin: 0 1%;
+                             right: 0;
+                           }
+                           figure img { margin: 1.4rem 0;
+                                        width: 100%; } }
